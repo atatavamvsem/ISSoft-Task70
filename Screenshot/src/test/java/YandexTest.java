@@ -52,7 +52,7 @@ public class YandexTest {
 
     private void takeScreenshot() throws IOException {
         File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-        FileUtils.copyFile(scrFile, new File("./" + getClass().getName() + "_" + formatter.format( new Date()) + ".png"));
+        FileUtils.copyFile(scrFile, new File(String.format("./%s_%s.png", getClass().getName(), formatter.format(new Date()))));
     }
 
     @AfterEach
